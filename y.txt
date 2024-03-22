@@ -1,0 +1,49 @@
+Git utilise trois zones principales pour gérer les modifications et les versions de votre code. Ces zones sont le répertoire de travail (working directory), la zone de préparation (staging area ou index), et le référentiel (repository).
+
+Répertoire de travail (Working Directory) :
+
+C'est l'endroit où vous modifiez, créez et supprimez des fichiers.
+Les fichiers dans le répertoire de travail ne sont pas encore suivis par Git.
+Zone de préparation (Staging Area ou Index) :
+
+C'est une zone intermédiaire entre le répertoire de travail et le référentiel.
+Vous ajoutez des fichiers modifiés à la zone de préparation avant de les valider dans le référentiel.
+Permet de sélectionner les changements spécifiques que vous souhaitez inclure dans le prochain commit.
+Référentiel (Repository) :
+
+C'est là où Git stocke l'historique des versions de votre projet.
+Après avoir validé les changements à partir de la zone de préparation, ils sont enregistrés dans le référentiel en tant que commit.
+Maintenant, voici quelques-unes des commandes Git qui vous permettent de passer d'une zone à une autre :
+
+Passer du répertoire de travail à la zone de préparation :
+
+bash
+Copy code
+git add <nom_du_fichier>  # Ajouter un fichier spécifique
+git add .                # Ajouter tous les fichiers modifiés
+Passer de la zone de préparation au référentiel :
+
+bash
+Copy code
+git commit -m "Message de commit"
+Modifier un commit (dans le répertoire de travail et la zone de préparation) :
+
+bash
+Copy code
+git amend
+Annuler des changements dans le répertoire de travail (non encore ajoutés à la zone de préparation) :
+
+bash
+Copy code
+git checkout -- <nom_du_fichier>
+Annuler des changements dans la zone de préparation (déplacer des changements vers le répertoire de travail) :
+
+bash
+Copy code
+git reset HEAD <nom_du_fichier>
+Déplacer des modifications du référentiel vers le répertoire de travail et la zone de préparation (revert) :
+
+bash
+Copy code
+git revert <ID_DU_COMMIT>
+Ces commandes vous permettent de gérer efficacement les modifications dans les différentes zones de Git tout au long de votre processus de développement.
